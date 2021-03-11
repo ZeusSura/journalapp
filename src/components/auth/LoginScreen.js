@@ -6,7 +6,7 @@ import { login } from "../../actions/auth";
 export const LoginScreen = () => {
 
     const dispach =useDispatch()
-  const [values, handleInputChange, reset] = useForm({
+  const [values, handleInputChange] = useForm({
     email: "",
     password: "",
   });
