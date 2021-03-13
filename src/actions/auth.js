@@ -1,3 +1,4 @@
+import {firebase,googleAuthProvider} from "../firebase/firebase-condig";
 import { types } from "../types/types";
 
 export const startLoginEmail = (email, password) => {
@@ -15,3 +16,14 @@ export const login = (uid, displayName) => ({
     displayName,
   },
 });
+
+//Action de google 
+export const startGoogleLogin = ()=>
+{
+  return(dispatch)=>{
+    firebase.auth().signInWithPopup(googleAuthProvider).
+    then(userCredential=>{
+      console.log(userCredential)
+    })
+  }
+}
